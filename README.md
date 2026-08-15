@@ -13,7 +13,7 @@ DeepSeek Harness 的社区插件索引：按 GitHub 星标浏览带 `dsh-plugin`
 需要已能运行的 DSH web（`dsh` 在 PATH 上，或源码树里能跑 `pnpm dsh`）。
 
 ```sh
-dsh plugin --profile web add github:2711686331/dsh-plugin-index
+dsh plugin --profile web add github:GGigHub/dsh-plugin-index
 ```
 
 重启 DSH 后，打开左侧栏「插件」。
