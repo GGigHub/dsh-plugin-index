@@ -1,5 +1,7 @@
 # dsh-plugin-index
 
+> ⚠️ **本项目不接受 Pull Request 与 Issue**，仅作只读分发。如需改动请 fork 后自行维护；社区插件请直接提交到你自己的仓库。
+
 DeepSeek Harness 的社区插件索引：按 GitHub 星标浏览带 `dsh-plugin` topic 的仓库，并在 web profile 里安装 / 更新 / 修复 / 卸载。
 
 左侧栏 Settings 上方会出现「插件」按钮。官方设置页里的「插件列表」是只读的 Loader 清单（当前挂了哪些 fiber）；本包补的是市场发现和生命周期，两者不互相替代。
@@ -37,12 +39,12 @@ dsh plugin --profile web remove @dsh-external/dsh-plugin-index
 
 ## 环境变量
 
-| 变量 | 作用 |
-|---|---|
-| `GITHUB_TOKEN` / `GH_TOKEN` | 提高 GitHub Search 限额（未登录约 60 次/小时） |
-| `DSH_HOME` | Harness 主目录，默认 `~/.dsh` |
-| `DSH_PROFILE` | 操作的 profile，默认 `web` |
-| `DSH_CHECKOUT` | 源码树根目录（需含 `apps/cli`）。PATH 上没有 `dsh` 时才会用到 |
+| 变量                            | 作用                                                             |
+| ------------------------------- | ---------------------------------------------------------------- |
+| `GITHUB_TOKEN` / `GH_TOKEN` | 提高 GitHub Search 限额（未登录约 60 次/小时）                   |
+| `DSH_HOME`                    | Harness 主目录，默认`~/.dsh`                                   |
+| `DSH_PROFILE`                 | 操作的 profile，默认`web`                                      |
+| `DSH_CHECKOUT`                | 源码树根目录（需含`apps/cli`）。PATH 上没有 `dsh` 时才会用到 |
 
 查找 CLI 的顺序：`DSH_CHECKOUT` → PATH 上的 `dsh` → 从 `cwd` / `argv` 向上找含 `apps/cli` 的源码树。找到 `dsh` 就直接调用；只有源码树才用 `pnpm dsh`。
 

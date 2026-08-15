@@ -1,0 +1,20 @@
+name: 拒绝 PR（自动关闭）
+
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 自动关闭 PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          gh pr close "$PR" \
+            --comment "本项目不接受 Pull Request，请 fork 后自行维护。"
