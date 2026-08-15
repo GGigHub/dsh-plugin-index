@@ -28,7 +28,7 @@ dsh plugin --profile web remove @dsh-external/dsh-plugin-index
 
 ## 用法
 
-- **市场**：GitHub `topic:dsh-plugin`，按星标降序（最多 50 条）。
+- **市场**：GitHub `topic:dsh-plugin`，按星标降序；Search API 分页拉取，最多 1000 条，面板每页 50 条。
 - **刷新**：重新请求 GitHub（绕过 15 分钟缓存）。
 - **安装**：只接受 `github:owner/repo`。
 - **更新**：`dsh plugin update <package-name>`。
