@@ -28,8 +28,9 @@ dsh plugin --profile web remove @dsh-external/dsh-plugin-index
 
 ## 用法
 
-- **市场**：GitHub `topic:dsh-plugin`，按星标降序；Search API 分页拉取，最多 1000 条，面板每页 50 条。
-- **刷新**：重新请求 GitHub（绕过 15 分钟缓存）。
+- **市场**：GitHub `topic:dsh-plugin`，按星标降序；Search API 分页拉取，最多 1000 条，面板每页 50 条。首屏先返回第 1 页（或本地缓存），后台补全后自动更新。
+- **搜索**：在已加载的目录上本地过滤（仓库名 / 描述 / spec）；清空输入即可回到全量列表。
+- **刷新**：重新请求 GitHub（绕过 15 分钟缓存）；搜索关键词不参与服务端过滤。
 - **安装**：只接受 `github:owner/repo`。
 - **更新**：`dsh plugin update <package-name>`。
 - **修复**：对已装规格再执行 `add`（`github:` 或已记录的本地 `link:`）。
@@ -46,7 +47,7 @@ dsh plugin --profile web remove @dsh-external/dsh-plugin-index
 | `DSH_PROFILE`                 | 操作的 profile，默认`web`                                      |
 | `DSH_CHECKOUT`                | 源码树根目录（需含`apps/cli`）。PATH 上没有 `dsh` 时才会用到 |
 
-查找 CLI 的顺序：`DSH_CHECKOUT` → PATH 上的 `dsh` → 从 `cwd` / `argv` 向上找含 `apps/cli` 的源码树。找到 `dsh` 就直接调用；只有源码树才用 `pnpm dsh`。
+查找 CLI 的顺序：PATH 上的 `dsh` → `DSH_CHECKOUT` / 从 `cwd` / `argv` 向上找含 `apps/cli` 的源码树。找到 `dsh` 就直接调用；只有源码树才用 `pnpm dsh`。
 
 ## 作为组合包
 
