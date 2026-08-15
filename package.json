@@ -15,12 +15,12 @@
   "keywords": ["dsh-plugin", "deepseek-harness", "cordis"],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yjh051108/dsh-plugin-index.git"
+    "url": "git+https://github.com/2711686331/dsh-plugin-index.git"
   },
   "bugs": {
-    "url": "https://github.com/yjh051108/dsh-plugin-index/issues"
+    "url": "https://github.com/2711686331/dsh-plugin-index/issues"
   },
-  "homepage": "https://github.com/yjh051108/dsh-plugin-index#readme",
+  "homepage": "https://github.com/2711686331/dsh-plugin-index#readme",
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
