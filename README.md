@@ -43,6 +43,7 @@ dsh plugin --profile web remove @dsh-external/dsh-plugin-index
 | 变量                            | 作用                                                             |
 | ------------------------------- | ---------------------------------------------------------------- |
 | `GITHUB_TOKEN` / `GH_TOKEN` | 提高 GitHub Search 限额（未登录约 60 次/小时）                   |
+| `DSH_HTTPS_PROXY` / `DSH_HTTP_PROXY` | 安装时优先使用的代理；未设置时会尝试常见本机端口（7890 等），并补齐 `NODE_USE_ENV_PROXY` |
 | `DSH_HOME`                    | Harness 主目录，默认`~/.dsh`                                   |
 | `DSH_PROFILE`                 | 操作的 profile，默认`web`                                      |
 | `DSH_CHECKOUT`                | 源码树根目录（需含`apps/cli`）。PATH 上没有 `dsh` 时才会用到 |
