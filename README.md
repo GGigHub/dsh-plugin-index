@@ -31,7 +31,7 @@ dsh plugin --profile web remove @dsh-external/dsh-plugin-index
 - **市场**：GitHub `topic:dsh-plugin`，按星标降序；Search API 分页拉取，最多 1000 条，面板每页 50 条。首屏先返回第 1 页（或本地缓存），后台补全后自动更新。
 - **搜索**：在已加载的目录上本地过滤（仓库名 / 描述 / spec）；清空输入即可回到全量列表。
 - **刷新**：重新请求 GitHub（绕过 15 分钟缓存）；搜索关键词不参与服务端过滤。
-- **安装**：只接受 `github:owner/repo`。
+- **安装**：只接受 `github:owner/repo`。点击后立即进入「安装中」队列（串行执行），可看状态、耗时与日志；进行中或失败可取消，成功项在下次打开「安装中」列表时清除。
 - **更新**：`dsh plugin update <package-name>`。
 - **修复**：对已装规格再执行 `add`（`github:` 或已记录的本地 `link:`）。
 - **卸载**：只用 profile 里已解析的 package name；卸前会确认。
