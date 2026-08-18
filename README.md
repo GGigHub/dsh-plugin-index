@@ -29,7 +29,8 @@ dsh plugin --profile web remove @dsh-external/dsh-plugin-index
 ## 用法
 
 - **市场**：GitHub `topic:dsh-plugin`，按星标降序；Search API 分页拉取，最多 1000 条，面板每页 50 条。首屏先返回第 1 页（或本地缓存），后台补全后自动更新。
-- **搜索**：在已加载的目录上本地过滤（仓库名 / 描述 / spec）；清空输入即可回到全量列表。
+- **分类**：市场与已安装按功能打多标签（界面 / 桌面 / 主题 / 技能 / 用量 / 视觉 / 浏览器 / MCP / 工具 / 渠道 / 记忆 / 会话 / 安全 / 模型 / 市场）。同一插件可以同时属于多类，点芯片看「含该标签」的列表。优先认仓库 topic `dsh-category-*`，否则用名称、描述和其它 topic 匹配；没有任何信号的归入「其他」。
+- **搜索**：在已加载的目录上本地过滤（仓库名 / 描述 / spec / 分类）；清空输入即可回到全量列表。
 - **刷新**：重新请求 GitHub（绕过 15 分钟缓存）；搜索关键词不参与服务端过滤。
 - **安装**：只接受 `github:owner/repo`（装的是仓库**根目录**）。点击后立即进入「安装中」队列（串行执行），可看状态、耗时与日志；进行中或失败可取消，成功项在下次打开「安装中」列表时清除。已知需装子目录的仓库会禁用市场「安装」，请走手动流程。
 - **更新 / 修复 / 卸载**：队列进行中会禁用，避免和安装同时改 profile。
@@ -66,6 +67,8 @@ dsh plugin --profile web remove @dsh-external/dsh-plugin-index
 `package.json` 声明 `dsh.bundle.patch`，`cordis.patch.yml` 插入 `@dsh-external/dsh-plugin-index`。这是官方 out-of-tree 组合包形态；没有 `dsh.bundle` 的仓库会出现在市场上，但 `dsh plugin add` 只会把它当成普通依赖。
 
 若你维护的是「一个仓库多个可装包」，想让市场一键可用：把可装包放到独立仓库，或让仓库根目录本身声明 `dsh.bundle`。否则用户只能按上面的手动流程装子目录。
+
+想出现在对应分类下，给仓库加上一个或多个 `dsh-category-theme|memory|usage|skill|security|channel|ui|tool|provider|vision|browser|desktop|mcp|market|session` topic。没有该 topic 时，索引会按名称和描述打多标签。
 
 ## 许可证
 
